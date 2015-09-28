@@ -1,0 +1,7 @@
+KEYWORD="gain"
+if [ "$1" != "" ]; then
+  sudo v4l2-ctl -c $KEYWORD=$1
+fi
+
+sudo v4l2-ctl -C $KEYWORD
+

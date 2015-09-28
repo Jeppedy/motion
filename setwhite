@@ -1,0 +1,13 @@
+KEYWORD="white_balance_temperature"
+if [ "$1" != "" ]; then
+  if [ $1 == 0 ]; then
+    sudo v4l2-ctl -c ${KEYWORD}_auto=1
+  else
+    sudo v4l2-ctl -c ${KEYWORD}_auto=0
+    sudo v4l2-ctl -c $KEYWORD=$1
+  fi
+fi
+
+ sudo v4l2-ctl -C ${KEYWORD}_auto
+ sudo v4l2-ctl -C $KEYWORD
+
